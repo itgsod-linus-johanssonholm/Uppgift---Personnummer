@@ -22,6 +22,8 @@ def valid(personnummer):
     ninth = personnummer[8]
     tenth = personnummer[9]
 
+    #sätter variabler till varje siffra i personnumret
+
     value_first = first * 2
     value_second = second * 1
     value_third = third * 2
@@ -32,6 +34,7 @@ def valid(personnummer):
     value_eighth = eighth * 1
     value_ninth = ninth * 2
 
+    #mulitplicerar dessa värden på rätt sätt
 
     if value_first >= 10:
         value_first=sum(map(int, str(value_first)))
@@ -60,13 +63,18 @@ def valid(personnummer):
     if value_ninth >= 10:
         value_ninth=sum(map(int, str(value_ninth)))
 
+    #sätter de multiplicerade värdena till två stycken ensiffriga tal om de är tvåsiffriga
 
     summ = value_first + value_second + value_third + value_fourth + value_fifth + value_sixth + value_seventh + value_ninth + tenth
+
+    #plussar ihop alla talen
 
     if summ % 10 == 0:
         print "Valid"
     else:
         print "Invalid"
+
+    #kontrollerar om talen är jämnt delbara med tio
 
 personnummer = [9, 7, 0, 4, 2, 2, 6, 0, 7, 6]
 valid(personnummer)
