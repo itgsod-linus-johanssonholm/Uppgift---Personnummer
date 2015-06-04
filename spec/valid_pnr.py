@@ -3,6 +3,14 @@
 from future_builtins import map
 
 def valid(personnummer):
+    """
+    Personnummersvalideraren
+
+    :param Personnummer: Array
+
+    :Return: Valid or Invalid
+    """
+
     first = personnummer[0]
     second = personnummer[1]
     third = personnummer[2]
@@ -14,8 +22,6 @@ def valid(personnummer):
     ninth = personnummer[8]
     tenth = personnummer[9]
 
-#    print first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth
-
     value_first = first * 2
     value_second = second * 1
     value_third = third * 2
@@ -26,7 +32,6 @@ def valid(personnummer):
     value_eighth = eighth * 1
     value_ninth = ninth * 2
 
-#    print value_first, value_second, value_third, value_fourth, value_fifth, value_sixth, value_seventh, value_eighth, value_ninth
 
     if value_first >= 10:
         value_first=sum(map(int, str(value_first)))
@@ -54,6 +59,7 @@ def valid(personnummer):
 
     if value_ninth >= 10:
         value_ninth=sum(map(int, str(value_ninth)))
+
 
     summ = value_first + value_second + value_third + value_fourth + value_fifth + value_sixth + value_seventh + value_ninth + tenth
 
